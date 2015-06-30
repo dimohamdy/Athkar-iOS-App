@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D4928791B42F6FD00CD35F4 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928701B42F6FD00CD35F4 /* MenuCell.swift */; };
+		3D49287A1B42F6FD00CD35F4 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928711B42F6FD00CD35F4 /* PageCell.swift */; };
+		3D49287B1B42F6FD00CD35F4 /* Athkar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928731B42F6FD00CD35F4 /* Athkar.swift */; };
+		3D49287C1B42F6FD00CD35F4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928741B42F6FD00CD35F4 /* MenuItem.swift */; };
+		3D49287D1B42F6FD00CD35F4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928761B42F6FD00CD35F4 /* MainViewController.swift */; };
+		3D49287E1B42F6FD00CD35F4 /* PageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928771B42F6FD00CD35F4 /* PageViewerViewController.swift */; };
+		3D49287F1B42F6FD00CD35F4 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928781B42F6FD00CD35F4 /* PresentViewController.swift */; };
 		3D8776731B3D750B00784F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8776721B3D750B00784F27 /* AppDelegate.swift */; };
 		3D8776781B3D750B00784F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8776761B3D750B00784F27 /* Main.storyboard */; };
 		3D87767A1B3D750B00784F27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8776791B3D750B00784F27 /* Images.xcassets */; };
@@ -64,9 +71,7 @@
 		3D8777671B3D7F0700784F27 /* Nature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D8777331B3D7F0700784F27 /* Nature.mp3 */; };
 		3D8777681B3D7F0700784F27 /* Night.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D8777341B3D7F0700784F27 /* Night.mp3 */; };
 		3D8777691B3D7F0700784F27 /* travel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D8777351B3D7F0700784F27 /* travel.mp3 */; };
-		3D87776B1B3D7F6D00784F27 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87776A1B3D7F6D00784F27 /* MainViewController.swift */; };
-		3D87776D1B3D810100784F27 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87776C1B3D810100784F27 /* MenuItem.swift */; };
-		3D87776F1B3D8A6A00784F27 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87776E1B3D8A6A00784F27 /* MenuCell.swift */; };
+		3D8777881B3F6A8700784F27 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8777871B3F6A8700784F27 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D4928701B42F6FD00CD35F4 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		3D4928711B42F6FD00CD35F4 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		3D4928731B42F6FD00CD35F4 /* Athkar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Athkar.swift; sourceTree = "<group>"; };
+		3D4928741B42F6FD00CD35F4 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		3D4928761B42F6FD00CD35F4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3D4928771B42F6FD00CD35F4 /* PageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewerViewController.swift; sourceTree = "<group>"; };
+		3D4928781B42F6FD00CD35F4 /* PresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
 		3D87766D1B3D750B00784F27 /* Athkar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Athkar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8776711B3D750B00784F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8776721B3D750B00784F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,9 +153,9 @@
 		3D8777331B3D7F0700784F27 /* Nature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Nature.mp3; sourceTree = "<group>"; };
 		3D8777341B3D7F0700784F27 /* Night.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Night.mp3; sourceTree = "<group>"; };
 		3D8777351B3D7F0700784F27 /* travel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = travel.mp3; sourceTree = "<group>"; };
-		3D87776A1B3D7F6D00784F27 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3D87776C1B3D810100784F27 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
-		3D87776E1B3D8A6A00784F27 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		3D8777751B3DE8BD00784F27 /* DroidKufi-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DroidKufi-Bold.ttf"; sourceTree = "<group>"; };
+		3D8777761B3DE8BD00784F27 /* DroidKufi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DroidKufi-Regular.ttf"; sourceTree = "<group>"; };
+		3D8777871B3F6A8700784F27 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +176,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D49286F1B42F6FD00CD35F4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D4928701B42F6FD00CD35F4 /* MenuCell.swift */,
+				3D4928711B42F6FD00CD35F4 /* PageCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D4928721B42F6FD00CD35F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D4928731B42F6FD00CD35F4 /* Athkar.swift */,
+				3D4928741B42F6FD00CD35F4 /* MenuItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3D4928751B42F6FD00CD35F4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D4928761B42F6FD00CD35F4 /* MainViewController.swift */,
+				3D4928771B42F6FD00CD35F4 /* PageViewerViewController.swift */,
+				3D4928781B42F6FD00CD35F4 /* PresentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		3D8776641B3D750B00784F27 = {
 			isa = PBXGroup;
 			children = (
@@ -185,16 +225,17 @@
 		3D87766F1B3D750B00784F27 /* Athkar */ = {
 			isa = PBXGroup;
 			children = (
-				3D8777001B3D7F0700784F27 /* DataContent */,
-				3D8777041B3D7F0700784F27 /* Sounds */,
 				3D8776721B3D750B00784F27 /* AppDelegate.swift */,
-				3D87776C1B3D810100784F27 /* MenuItem.swift */,
-				3D87776A1B3D7F6D00784F27 /* MainViewController.swift */,
+				3D8777041B3D7F0700784F27 /* Sounds */,
+				3D8777001B3D7F0700784F27 /* DataContent */,
+				3D49286F1B42F6FD00CD35F4 /* Cells */,
+				3D4928721B42F6FD00CD35F4 /* Models */,
+				3D4928751B42F6FD00CD35F4 /* ViewController */,
 				3D8776761B3D750B00784F27 /* Main.storyboard */,
 				3D8776791B3D750B00784F27 /* Images.xcassets */,
 				3D87767B1B3D750B00784F27 /* LaunchScreen.xib */,
 				3D8776701B3D750B00784F27 /* Supporting Files */,
-				3D87776E1B3D8A6A00784F27 /* MenuCell.swift */,
+				3D8777871B3F6A8700784F27 /* UIColorExtension.swift */,
 			);
 			path = Athkar;
 			sourceTree = "<group>";
@@ -219,6 +260,8 @@
 		3D8776861B3D750C00784F27 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3D8777751B3DE8BD00784F27 /* DroidKufi-Bold.ttf */,
+				3D8777761B3DE8BD00784F27 /* DroidKufi-Regular.ttf */,
 				3D8776871B3D750C00784F27 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -334,6 +377,7 @@
 		3D8776651B3D750B00784F27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = AhmedHamdy;
 				TargetAttributes = {
@@ -442,10 +486,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D87776D1B3D810100784F27 /* MenuItem.swift in Sources */,
+				3D49287D1B42F6FD00CD35F4 /* MainViewController.swift in Sources */,
 				3D8776731B3D750B00784F27 /* AppDelegate.swift in Sources */,
-				3D87776F1B3D8A6A00784F27 /* MenuCell.swift in Sources */,
-				3D87776B1B3D7F6D00784F27 /* MainViewController.swift in Sources */,
+				3D8777881B3F6A8700784F27 /* UIColorExtension.swift in Sources */,
+				3D49287A1B42F6FD00CD35F4 /* PageCell.swift in Sources */,
+				3D49287C1B42F6FD00CD35F4 /* MenuItem.swift in Sources */,
+				3D49287F1B42F6FD00CD35F4 /* PresentViewController.swift in Sources */,
+				3D4928791B42F6FD00CD35F4 /* MenuCell.swift in Sources */,
+				3D49287B1B42F6FD00CD35F4 /* Athkar.swift in Sources */,
+				3D49287E1B42F6FD00CD35F4 /* PageViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,9 +621,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Athkar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -582,9 +633,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Athkar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

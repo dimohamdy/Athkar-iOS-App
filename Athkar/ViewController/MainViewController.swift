@@ -11,6 +11,8 @@ import UIKit
 class MainViewController: UITableViewController {
     var menuItems = [MenuItem]()
     var selectedMenuItem: MenuItem!
+    var screenEdgeRecognizer: UIScreenEdgePanGestureRecognizer!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,17 +28,44 @@ class MainViewController: UITableViewController {
         self.navigationItem.titleView = UIImageView(image: logoImage)
         
         
-        let path = NSBundle.mainBundle().pathForResource("AthkarMenu", ofType:"plist")
-        let dict = NSDictionary(contentsOfFile:path!)!
-        let venuesArray : AnyObject = (dict as AnyObject).valueForKey("AthkarMenu")!
-        
-        
-        for dict in venuesArray as! [Dictionary<String,String>]{
-           menuItems.append(MenuItem(menu: dict))
 
+        
+        backgroundThread(background: {
+            // Your function here to run in the background
+            
+            let path = NSBundle.mainBundle().pathForResource("AthkarMenu", ofType:"plist")
+            let dict = NSDictionary(contentsOfFile:path!)!
+            let venuesArray : AnyObject = (dict as AnyObject).valueForKey("AthkarMenu")!
+            
+            
+            for dict in venuesArray as! [Dictionary<String,String>]{
+                self.menuItems.append(MenuItem(menu: dict))
+                
+            }
+            
+            },
+            completion: {
+                // A function to run in the foreground when the background thread is complete
+            self.tableView.reloadData()
+        });
+        
+        screenEdgeRecognizer = UIScreenEdgePanGestureRecognizer(target: self,
+            action: "showPresent:")
+        screenEdgeRecognizer.edges = .Right
+        view.addGestureRecognizer(screenEdgeRecognizer)
+        
+    }
+    func showPresent(sender: UIScreenEdgePanGestureRecognizer) {
+        // 1
+        if sender.state == .Ended {
+            self.performSegueWithIdentifier("PresentViewController", sender: self)
+        
         }
     }
-
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationBarHidden = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -85,43 +114,8 @@ class MainViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         println("You selected cell #\(indexPath.row)!")
         selectedMenuItem =  menuItems[indexPath.row]
-        self.performSegueWithIdentifier("Page", sender: self)
+        self.performSegueWithIdentifier("PageViewerViewController", sender: self)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -130,6 +124,25 @@ class MainViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if "PresentViewController" == segue.identifier{
+            
+        }else{
+        var pageViewerViewController:PageViewerViewController = segue.destinationViewController as! PageViewerViewController
+        pageViewerViewController.page = selectedMenuItem.page
+        pageViewerViewController.pageTitle = selectedMenuItem.name
+        
+        }
+    }
+   
+    func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
+        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.value), 0)) {
+            if(background != nil){ background!(); }
+            
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
+            dispatch_after(popTime, dispatch_get_main_queue()) {
+                if(completion != nil){ completion!(); }
+            }
+        }
     }
     
 
