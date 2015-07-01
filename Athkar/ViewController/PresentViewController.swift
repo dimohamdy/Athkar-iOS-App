@@ -32,7 +32,7 @@ class PresentViewController: UIViewController{
 
         formatter.dateFormat = "EEEE"
         let dayOfWeekString = formatter.stringFromDate(NSDate())
-        println(dayOfWeekString)
+        //println(dayOfWeekString)
         currentDaylabel.text = dayOfWeekString
         
         

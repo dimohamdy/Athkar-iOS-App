@@ -190,18 +190,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-Xg-qQH" userLabel="counter">
-                                <rect key="frame" x="0.0" y="462" width="320" height="60"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RightPressed" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-vy-S2B">
-                                        <rect key="frame" x="250" y="9" width="62" height="41"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="kIg-eY-Uz1"/>
-                                </constraints>
-                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4O-uI-xv7">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
@@ -214,6 +202,9 @@
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uk5-OL-rPy">
                                 <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gZd-ZL-zAt" id="Ps0-3t-o79"/>
+                                </connections>
                             </scrollView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="L5m-Bf-sal">
                                 <rect key="frame" x="0.0" y="64" width="320" height="460"/>
@@ -262,6 +253,60 @@
                                     <outlet property="delegate" destination="gZd-ZL-zAt" id="sVK-Og-K4Y"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-Xg-qQH" userLabel="counter">
+                                <rect key="frame" x="0.0" y="442" width="320" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightPressed" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-vy-S2B">
+                                        <rect key="frame" x="250" y="9" width="62" height="41"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edk-ph-ews" customClass="DMCircleCounter">
+                                        <rect key="frame" x="125" y="5" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="FZh-gs-M2w"/>
+                                            <constraint firstAttribute="height" constant="70" id="lcB-Pb-fIJ"/>
+                                        </constraints>
+                                    </view>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DuC-79-cKn" customClass="DMCircleCounterWithOutSegment">
+                                        <rect key="frame" x="125" y="5" width="70" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FL-p3-bn5">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="40"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="countPlusOne:" destination="gZd-ZL-zAt" eventType="touchUpInside" id="U74-WS-i1d"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8FL-p3-bn5" secondAttribute="trailing" id="10J-eH-FF8"/>
+                                            <constraint firstItem="8FL-p3-bn5" firstAttribute="leading" secondItem="DuC-79-cKn" secondAttribute="leading" id="3Or-pc-hc2"/>
+                                            <constraint firstAttribute="width" constant="70" id="DMi-12-mGw"/>
+                                            <constraint firstAttribute="height" constant="70" id="Vfm-gR-Oj2"/>
+                                            <constraint firstAttribute="bottom" secondItem="8FL-p3-bn5" secondAttribute="bottom" id="Xgx-aZ-IYH"/>
+                                            <constraint firstItem="8FL-p3-bn5" firstAttribute="top" secondItem="DuC-79-cKn" secondAttribute="top" id="ZPi-f3-HCQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="DuC-79-cKn" firstAttribute="top" secondItem="cnM-Xg-qQH" secondAttribute="top" constant="5" id="8Bn-9V-ADq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Edk-ph-ews" secondAttribute="bottom" constant="5" id="9da-Mf-t5d"/>
+                                    <constraint firstAttribute="bottom" secondItem="DuC-79-cKn" secondAttribute="bottom" constant="5" id="AZj-up-CW9"/>
+                                    <constraint firstItem="Edk-ph-ews" firstAttribute="centerX" secondItem="cnM-Xg-qQH" secondAttribute="centerX" id="K1G-o2-P0U"/>
+                                    <constraint firstItem="cjy-vy-S2B" firstAttribute="leading" secondItem="Edk-ph-ews" secondAttribute="trailing" constant="55" id="TZw-CT-wd9"/>
+                                    <constraint firstItem="Edk-ph-ews" firstAttribute="top" secondItem="cnM-Xg-qQH" secondAttribute="top" constant="5" id="ZTY-Aq-OWH"/>
+                                    <constraint firstAttribute="centerY" secondItem="DuC-79-cKn" secondAttribute="centerY" id="hro-Qz-ZJ4"/>
+                                    <constraint firstItem="cjy-vy-S2B" firstAttribute="top" secondItem="cnM-Xg-qQH" secondAttribute="top" constant="9" id="iGr-4x-kRY"/>
+                                    <constraint firstAttribute="height" constant="80" id="kIg-eY-Uz1"/>
+                                    <constraint firstAttribute="centerY" secondItem="Edk-ph-ews" secondAttribute="centerY" id="oa5-xz-2Eg"/>
+                                    <constraint firstItem="Edk-ph-ews" firstAttribute="leading" secondItem="DuC-79-cKn" secondAttribute="leading" id="uZ0-tv-x5i"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -290,8 +335,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="circleCounter" destination="Edk-ph-ews" id="Ah2-5A-w3P"/>
                         <outlet property="contentScrollView" destination="uk5-OL-rPy" id="nx0-kR-OtO"/>
+                        <outlet property="counterView" destination="cnM-Xg-qQH" id="Kad-BW-hg8"/>
                         <outlet property="fastListTable" destination="L5m-Bf-sal" id="6at-c8-aTb"/>
+                        <outlet property="plusOneButton" destination="8FL-p3-bn5" id="2gO-lS-VRc"/>
+                        <outlet property="progresCount" destination="DuC-79-cKn" id="7Rf-hQ-awk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqY-f4-NlM" userLabel="First Responder" sceneMemberID="firstResponder"/>

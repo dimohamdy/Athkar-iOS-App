@@ -14,6 +14,8 @@
 		3D49287D1B42F6FD00CD35F4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928761B42F6FD00CD35F4 /* MainViewController.swift */; };
 		3D49287E1B42F6FD00CD35F4 /* PageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928771B42F6FD00CD35F4 /* PageViewerViewController.swift */; };
 		3D49287F1B42F6FD00CD35F4 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4928781B42F6FD00CD35F4 /* PresentViewController.swift */; };
+		3D49288D1B432D6D00CD35F4 /* DMCircleCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D49288A1B432D6D00CD35F4 /* DMCircleCounter.m */; };
+		3D49288E1B432D6D00CD35F4 /* DMCircleCounterWithOutSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D49288C1B432D6D00CD35F4 /* DMCircleCounterWithOutSegment.m */; };
 		3D8776731B3D750B00784F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8776721B3D750B00784F27 /* AppDelegate.swift */; };
 		3D8776781B3D750B00784F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8776761B3D750B00784F27 /* Main.storyboard */; };
 		3D87767A1B3D750B00784F27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8776791B3D750B00784F27 /* Images.xcassets */; };
@@ -92,6 +94,11 @@
 		3D4928761B42F6FD00CD35F4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D4928771B42F6FD00CD35F4 /* PageViewerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewerViewController.swift; sourceTree = "<group>"; };
 		3D4928781B42F6FD00CD35F4 /* PresentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		3D4928811B432D3C00CD35F4 /* Athkar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Athkar-Bridging-Header.h"; sourceTree = "<group>"; };
+		3D4928891B432D6D00CD35F4 /* DMCircleCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCircleCounter.h; sourceTree = "<group>"; };
+		3D49288A1B432D6D00CD35F4 /* DMCircleCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCircleCounter.m; sourceTree = "<group>"; };
+		3D49288B1B432D6D00CD35F4 /* DMCircleCounterWithOutSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCircleCounterWithOutSegment.h; sourceTree = "<group>"; };
+		3D49288C1B432D6D00CD35F4 /* DMCircleCounterWithOutSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCircleCounterWithOutSegment.m; sourceTree = "<group>"; };
 		3D87766D1B3D750B00784F27 /* Athkar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Athkar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8776711B3D750B00784F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8776721B3D750B00784F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +211,26 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		3D4928801B432CAC00CD35F4 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				3D4928881B432D6D00CD35F4 /* DMCircleCounter */,
+				3D4928811B432D3C00CD35F4 /* Athkar-Bridging-Header.h */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		3D4928881B432D6D00CD35F4 /* DMCircleCounter */ = {
+			isa = PBXGroup;
+			children = (
+				3D4928891B432D6D00CD35F4 /* DMCircleCounter.h */,
+				3D49288A1B432D6D00CD35F4 /* DMCircleCounter.m */,
+				3D49288B1B432D6D00CD35F4 /* DMCircleCounterWithOutSegment.h */,
+				3D49288C1B432D6D00CD35F4 /* DMCircleCounterWithOutSegment.m */,
+			);
+			path = DMCircleCounter;
+			sourceTree = "<group>";
+		};
 		3D8776641B3D750B00784F27 = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +252,7 @@
 		3D87766F1B3D750B00784F27 /* Athkar */ = {
 			isa = PBXGroup;
 			children = (
+				3D4928801B432CAC00CD35F4 /* Framework */,
 				3D8776721B3D750B00784F27 /* AppDelegate.swift */,
 				3D8777041B3D7F0700784F27 /* Sounds */,
 				3D8777001B3D7F0700784F27 /* DataContent */,
@@ -490,9 +518,11 @@
 				3D8776731B3D750B00784F27 /* AppDelegate.swift in Sources */,
 				3D8777881B3F6A8700784F27 /* UIColorExtension.swift in Sources */,
 				3D49287A1B42F6FD00CD35F4 /* PageCell.swift in Sources */,
+				3D49288E1B432D6D00CD35F4 /* DMCircleCounterWithOutSegment.m in Sources */,
 				3D49287C1B42F6FD00CD35F4 /* MenuItem.swift in Sources */,
 				3D49287F1B42F6FD00CD35F4 /* PresentViewController.swift in Sources */,
 				3D4928791B42F6FD00CD35F4 /* MenuCell.swift in Sources */,
+				3D49288D1B432D6D00CD35F4 /* DMCircleCounter.m in Sources */,
 				3D49287B1B42F6FD00CD35F4 /* Athkar.swift in Sources */,
 				3D49287E1B42F6FD00CD35F4 /* PageViewerViewController.swift in Sources */,
 			);
@@ -622,9 +652,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Athkar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Athkar/Framework/Athkar-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -634,9 +667,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Athkar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Athkar/Framework/Athkar-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

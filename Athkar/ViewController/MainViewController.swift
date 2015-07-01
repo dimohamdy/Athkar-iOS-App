@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UITableViewController {
     var menuItems = [MenuItem]()
+    var selectedColor: UIColor!
+
     var selectedMenuItem: MenuItem!
     var screenEdgeRecognizer: UIScreenEdgePanGestureRecognizer!
 
@@ -112,7 +114,9 @@ class MainViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        println("You selected cell #\(indexPath.row)!")
+        //println("You selected cell #\(indexPath.row)!")
+        let cell = tableView.cellForRowAtIndexPath(indexPath)as! MenuCell
+        self.selectedColor =  cell.menuColorView.backgroundColor!
         selectedMenuItem =  menuItems[indexPath.row]
         self.performSegueWithIdentifier("PageViewerViewController", sender: self)
     }
@@ -130,6 +134,7 @@ class MainViewController: UITableViewController {
         var pageViewerViewController:PageViewerViewController = segue.destinationViewController as! PageViewerViewController
         pageViewerViewController.page = selectedMenuItem.page
         pageViewerViewController.pageTitle = selectedMenuItem.name
+          pageViewerViewController.selectedColor = self.selectedColor
         
         }
     }

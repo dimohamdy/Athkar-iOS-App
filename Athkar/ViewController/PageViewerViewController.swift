@@ -8,19 +8,29 @@
 
 import UIKit
 
-class PageViewerViewController: UIViewController{
+class PageViewerViewController: UIViewController ,UIScrollViewDelegate{
 
     @IBOutlet var fastListTable: UITableView!
     @IBOutlet var contentScrollView: UIScrollView!
     internal var page:String!
     internal var pageTitle:String!
+    internal var selectedColor:UIColor!
 
+    @IBOutlet var counterView: UIView!
     var athkarItems = [Athkar]()
+
+    
+    @IBOutlet var circleCounter: DMCircleCounter!
+    @IBOutlet var progresCount: DMCircleCounterWithOutSegment!
+    @IBOutlet var plusOneButton: UIButton!
+
+    var currentCounterValue: Int  = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentScrollView.delegate = self
         self.navigationItem.title = pageTitle
-
+        self.navigationController?.navigationBar.barTintColor = selectedColor
         backgroundThread(background: {
             // Your function here to run in the background
             //Page
@@ -99,7 +109,7 @@ class PageViewerViewController: UIViewController{
 
         }
         
-        print(athkarItems[indexPath.item].title)
+        //print(athkarItems[indexPath.item].title)
         cell.titleLabel.text = athkarItems[indexPath.item].title
   
         cell.numberLabel.text = "\(indexPath.row+1)"
@@ -113,7 +123,7 @@ class PageViewerViewController: UIViewController{
     
     
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        println("You selected cell #\(indexPath.row)!")
+        //println("You selected cell #\(indexPath.row)!")
 //        selectedMenuItem =  menuItems[indexPath.row]
 //        self.performSegueWithIdentifier("PageViewerViewController", sender: self)
     }
@@ -151,5 +161,58 @@ class PageViewerViewController: UIViewController{
             }
         }
     }
+    var  count: Float = 0.0
+    var counterForLabel:Int = 0
+    
+    @IBAction func countPlusOne(sender: AnyObject) {
 
+        var value: Float = 1.0 / Float(currentCounterValue);
+        setNumberInButton(++counterForLabel)
+        if  count == 1.0 {
+            progresCount.resetView();
+            count = 0.0;
+            counterForLabel = 0;
+            setNumberInButton(counterForLabel)
+            
+        }
+        count += value;
+
+        progresCount.countOfSegment(count);
+
+    }
+    func setNumberInButton(number: Int ){
+        
+        var countString: String = "\(number)";
+        
+        plusOneButton.setTitle(countString, forState: UIControlState.Normal)
+        plusOneButton.setTitle(countString, forState: UIControlState.Application)
+        plusOneButton.setTitle(countString, forState: UIControlState.Highlighted)
+        plusOneButton.setTitle(countString, forState: UIControlState.Reserved)
+        plusOneButton.setTitle(countString, forState: UIControlState.Selected)
+        plusOneButton.setTitle(countString, forState: UIControlState.Disabled)
+    }
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        count = 0
+        progresCount.resetView()
+        circleCounter.resetView()
+
+        counterForLabel = 0
+        setNumberInButton(0)
+
+        var page: Int = (Int)(scrollView.contentOffset.x  / scrollView.frame.size.width)
+        var athkar: Athkar = athkarItems[page]
+        
+        currentCounterValue = athkar.count!
+        if athkar.count == 0 {
+            counterView.hidden = true
+            
+        }else{
+            
+            counterView.hidden = false
+            circleCounter.countOfSegment(Float(athkar.count!))
+
+
+        }
+        
+    }
 }
