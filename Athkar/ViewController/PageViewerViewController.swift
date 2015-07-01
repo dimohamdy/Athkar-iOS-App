@@ -192,6 +192,8 @@ class PageViewerViewController: UIViewController ,UIScrollViewDelegate{
         plusOneButton.setTitle(countString, forState: UIControlState.Disabled)
     }
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+        //reset
         count = 0
         progresCount.resetView()
         circleCounter.resetView()
